@@ -1,0 +1,16 @@
+disable_certificate_verification: true
+hostname: data.dev.dremio.site
+port: 443
+query: |
+  SELECT
+    action,
+    "timestamp",
+    REGEXP_REPLACE(details, '.*"id":"([^"]+)".*', '$1') AS extracted_id,
+    REGEXP_REPLACE(details, '.*"name":"([^"]+)".*', '$1') AS extracted_name,
+    REPLACE(REPLACE(REGEXP_REPLACE(details, '.*"path":"(.*?)"(?:,|}).*', '$1'), '\\"', '"'), '"', '') AS extracted_path
+  FROM sys.project.history.events
+  WHERE event_type = 'TABLE' 
+  AND action = 'DELETE'
+tls: true
+token: 62Kgjw/cR9OUxSkNQMJwo9sEevrU4jAt7yRJLXvqXQ6LlPlXud+kdHbtpt0dcA==
+# project_id: 2d75fc35-1137-4d65-9b02-2408c6166370
