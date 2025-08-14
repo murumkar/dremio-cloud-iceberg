@@ -1,0 +1,7 @@
+{
+  "catalogEndpoint": "https://nessie.dremio.cloud/repositories/3409127c-df44-4c1f-bfce-0dd65c82364b/api/v2",
+  "s3RootPath": "s3://manoj-wellsfargo/arcticCatalog",
+  "token": "PQYMGFBLQ+SnKmijghsurc/mM6D6KXwru2TTgJNSswLNGK+JPEGgxkv2rByUew==",
+  "days": 7,
+  "dryrun": false
+}
