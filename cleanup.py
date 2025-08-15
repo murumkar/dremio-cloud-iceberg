@@ -29,9 +29,7 @@ dryrun = bool(config.get("dryrun", True)) # default to True if missing
 
 # Calculate timestamp for filter (UTC, ISO 8601 format)
 # Example: 2025-08-12T18:45:50Z
-timestamp_since = (
-    datetime.now(timezone.utc) - timedelta(days=days)
-).strftime("%Y-%m-%dT%H:%M:%SZ")
+timestamp_since = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 # headers for Nessie API
 headers = {
